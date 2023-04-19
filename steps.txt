@@ -1,0 +1,31 @@
+***COMANDOS***
+colcon build --symlink-install
+ros2 launch conecta_bot rsp.launch.py
+ros2 run joint_state_publisher_gui joint_state_publisher_gui
+source install/setup.bash
+ros2 launch conecta_bot rsp.launch.py use_sim_time:=true
+ros2 param get /robot_state_publisher use_sim_time
+
+
+
+***INSTALACAO***
+Install ROS2
+Install colcon
+install ros-humble-xacro e ros-humble-joint-state-publisher-gui
+source ~/your_workspace/install/setup.bash
+
+#install xquartz 
+#ifconfig | grep "inet " | grep -v 127.0.0.1
+#xhost +192.168.0.17
+#docker start -i ros2-1
+#docker exec -it CONTAINER_ID /bin/bash
+#export DISPLAY=IP_DO_SEU_MAC:0
+#apt-get update && apt-get install -y x11-apps
+
+sudo apt install ros-humble-ros2-control
+sudo apt install ros-humble-ros2-controllers
+sudo apt install gazebo
+sudo apt install ros-humble-gazebo-ros-pkgs
+
+curl -sSL http://get.gazebosim.org | sh
+
